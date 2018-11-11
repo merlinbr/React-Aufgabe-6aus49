@@ -1,38 +1,30 @@
 import React from 'react';
 
 export default class Field extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isActivated: false};
-  }
-
+    /**
+     * sets the field state to true after the field was clicked and increments the numberOfActiveFields by 1
+     * @param event
+     */
   handleFieldActivated(event) {
     const fieldValue = event.target.innerText;
-    //console.log(this.state.isActivated);
-    //console.log(this.props.getNumberOfActiveFields());
-    this.setState({isActivated: true});
+    this.props.modifyFieldState(fieldValue, true);
     this.props.incrementActiveFields(fieldValue);
   }
 
-  static resetStates() {
-    console.log('reset');
-    const clickedFields = document.querySelectorAll('.game-field-container .field-clicked');
-    console.log(clickedFields);
-  }
-
+    /**
+     * sets the field state to false after the field was clicked and decrements the numberOfActiveFields by 1
+     * @param event
+     */
   handleFieldDeactivated(event) {
     const fieldValue = event.target.innerText;
-    this.setState({isActivated: false});
+    this.props.modifyFieldState(fieldValue, false);
     this.props.decrementActiveFields(fieldValue);
   }
 
   fieldValue = this.props.fieldValue;
   render() {
-    const isActivated = this.state.isActivated;
+    const isActivated = this.props.getFieldState(this.fieldValue);
     const numberOfActiveFields = this.props.getNumberOfActiveFields();
-    if (isActivated && numberOfActiveFields === 0) {
-      //this.resetAllStates();
-    }
     let fieldContent;
 
     if (isActivated) {
