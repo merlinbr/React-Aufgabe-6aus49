@@ -1,32 +1,88 @@
-.App {
-  text-align: center;
+.game-wrapper {
+  max-width: 28vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.btn-wrapper {
+  max-width: 28vw;
+  height: 35px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn {
+  height: 35px;
+  margin: 20px 0;
+  width: 6vw;
+  padding: 5px;
+  border: none;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: #AA4D6A;
+  color: #F9F7F7;
+  margin-left: 5px;
+}
+
+.btn-delete:hover {
+  background-color: #A13959;
+  color: #F7F5F4;
+}
+
+.btn-success {
+  background-color: #58B0AE;
+  color: #E5E0DC;
+  width: 10vw;
+  float: right;
+  margin-right: 30px;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px #999;
+}
+
+.game-header {
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  padding: 5px;
+  color: #797F7E;
+  font-size: calc(12px + 2vmin);
+}
+
+.game-field-container {
+  flex-direction: column;
+  margin-top: 20px;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.game-fields {
+  color: #48A9A6;
+  background-color: #E5E0DC;
+  width: 12%;
+  height: 50px;
+  padding: 4px;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  background-clip: content-box;
+  border-radius: 10px;
+  line-height: 45px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.field-clicked {
+  color: #E5E0DC;
+  background-color: #48A9A6;
+}
+
+.field-disabled {
+  color: #48A9A6;
+  background-color: #E5E0DC;
+  opacity: .5;
+  cursor:not-allowed;
 }
