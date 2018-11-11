@@ -1,20 +1,20 @@
 import React from 'react';
 
 export default class Field extends React.Component {
-    /**
-     * sets the field state to true after the field was clicked and increments the numberOfActiveFields by 1
-     * @param event
-     */
+  /**
+   * sets the field state to true after the field was clicked and increments the numberOfActiveFields by 1
+   * @param event
+   */
   handleFieldActivated(event) {
     const fieldValue = event.target.innerText;
     this.props.modifyFieldState(fieldValue, true);
     this.props.incrementActiveFields(fieldValue);
   }
 
-    /**
-     * sets the field state to false after the field was clicked and decrements the numberOfActiveFields by 1
-     * @param event
-     */
+  /**
+   * sets the field state to false after the field was clicked and decrements the numberOfActiveFields by 1
+   * @param event
+   */
   handleFieldDeactivated(event) {
     const fieldValue = event.target.innerText;
     this.props.modifyFieldState(fieldValue, false);
@@ -44,9 +44,9 @@ export default class Field extends React.Component {
     }
 
     return (
-        <div>
-          {fieldContent}
-        </div>
+      <div>
+        {fieldContent}
+      </div>
     );
   }
 }

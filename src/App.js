@@ -15,10 +15,10 @@ class App extends Component {
     };
   }
 
-    /**
-     * increments the numberOfActiveFields by 1 and pushes the field to the array list activeFields
-     * @param fieldValue as integer (e.g. for the field "46" we pass 46 as field value)
-     */
+  /**
+   * increments the numberOfActiveFields by 1 and pushes the field to the array list activeFields
+   * @param fieldValue as integer (e.g. for the field "46" we pass 46 as field value)
+   */
   incrementActiveFields(fieldValue) {
     const numberOfActiveFields = this.state.numberOfActiveFields + 1;
     this.setState({numberOfActiveFields: numberOfActiveFields});
@@ -43,20 +43,20 @@ class App extends Component {
     return fieldStates;
   }
 
-    /**
-     * returns the fieldState for a specific field
-     * @param field as integer (e.g. for the field "46" we pass 46 as field value)
-     * @returns fieldState as boolean
-     */
+  /**
+   * returns the fieldState for a specific field
+   * @param field as integer (e.g. for the field "46" we pass 46 as field value)
+   * @returns fieldState as boolean
+   */
   getFieldState(field) {
     return this.state.fieldStates[field];
   }
 
-    /**
-     *
-     * @param field as integer (e.g. for the field "46" we pass 46 as field value)
-     * @param value as boolean (e.g. if the field is clicked "true" will be passed as the value)
-     */
+  /**
+   *
+   * @param field as integer (e.g. for the field "46" we pass 46 as field value)
+   * @param value as boolean (e.g. if the field is clicked "true" will be passed as the value)
+   */
   modifyFieldState(field, value) {
     let newFieldStates = this.state.fieldStates;
     newFieldStates[field] = value;
@@ -65,10 +65,10 @@ class App extends Component {
     });
   }
 
-    /**
-     * decrement the numberOfActiveFields by 1 and removes the field from the activeFields array list
-     * @param fieldValue as integer (e.g. for the field "46" we pass 46 as field value)
-     */
+  /**
+   * decrement the numberOfActiveFields by 1 and removes the field from the activeFields array list
+   * @param fieldValue as integer (e.g. for the field "46" we pass 46 as field value)
+   */
   decrementActiveFields(fieldValue) {
     const numberOfActiveFields = this.state.numberOfActiveFields - 1;
     this.setState({numberOfActiveFields: numberOfActiveFields});
@@ -80,18 +80,18 @@ class App extends Component {
     });
   }
 
-    /**
-     * @returns the number of activeFields as a integer
-     */
+  /**
+   * @returns the number of activeFields as a integer
+   */
   getNumberOfActiveFields() {
     return this.state.numberOfActiveFields;
   }
 
-    /**
-     * resets the numberOfActiveFields, activeFields list, all the fieldStates
-     * and removes clicked/disabled css classes from the fields
-     */
-    resetActiveFields() {
+  /**
+   * resets the numberOfActiveFields, activeFields list, all the fieldStates
+   * and removes clicked/disabled css classes from the fields
+   */
+  resetActiveFields() {
     const numberOfActiveFields = 0;
     const activeFields = [];
     this.setState({
